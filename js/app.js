@@ -29,7 +29,12 @@ const reportPost = (id) => {
 };
 
 const displayContent = (text) => {
-    return text.length < 30 ? 'text' : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
+    if(text.length > 30){
+      return 'text' , text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
+    }else{
+      return text;
+    }
+  // return text.length > 30 ? 'text' : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
 };
 
 const switchTab = (id) => {
@@ -52,7 +57,7 @@ const switchTab = (id) => {
     }
 };
 
-// userImage
+
 const createPost = (post) => {
     const image = post.image;
   console.log(post)
